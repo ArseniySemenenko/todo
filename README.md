@@ -1,1 +1,1 @@
-https://arseniysemenenko.github.io/todo-app
+https://splendid-tarsier-f747b0.netlify.app/
