@@ -20,13 +20,7 @@ function App() {
             setRender(posts);
         }
         else{
-            const sorted = []
-            for(let i of posts){
-                if(i.title.includes(tag)){
-                    sorted.push(i);
-                }
-            }
-            setRender(sorted);
+            setRender(posts.filter(post => post.title.includes(tag)));
         }
     }
 
