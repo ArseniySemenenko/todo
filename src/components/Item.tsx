@@ -11,7 +11,7 @@ interface IProps{
 function Item({post , number , del , red} : IProps) {
 
     const [done , setDone] = useState(false);
-    const [redact , setRedact] = useState(false);
+    const [redact , setRedact] = useState(false); //is redact inputs visible
     const [title , setTitle] = useState(post.title);
     const [body , setBody] = useState(post.body);
 
@@ -28,6 +28,7 @@ function Item({post , number , del , red} : IProps) {
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     red(post , title, body);
+                    setRedact(!redact);
                 }}>
                     <input 
                         className="border border-gray-400 rounded w-[200px]"
