@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {IPost} from "./models";
 import List from "./components/List";
 import Form from "./components/Form";
+import Filter from './components/Filter';
 
 function App() {
     //all posts
@@ -73,6 +74,10 @@ function App() {
         setRender(posts);
     }
 
+    function filter(sub:String){
+        setRender(posts.filter(post => post.title.toLowerCase().includes(sub.toLocaleLowerCase())))
+    }
+
   return (
     <div className="container max-w-2xl ml-auto mr-auto">
         <Form createPost={createItem}/>
@@ -85,6 +90,7 @@ function App() {
                 tags.map(tag => <option>{tag}</option>)
             }
         </select>
+        <Filter filter={filter}/>
         <List red={redactPost} del={deleteItem} posts={render} title={"To Do"}/>
     </div>
   );
