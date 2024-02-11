@@ -7,7 +7,7 @@ import Filter from './components/Filter';
 function App() {
     //all posts
     const [posts , setPosts] = useState<IPost[]>([
-        {id: 0 , title:'JavaScript' , body:"Programming landuage"}
+        {id: 0 , title:'JavaScript' , body:"Programming language"}
     ]);
     //visible posts
     const [render , setRender] =  useState<IPost[]>(posts);
@@ -73,7 +73,7 @@ function App() {
     }
 
   return (
-    <div className="container max-w-2xl ml-auto mr-auto">
+    <div className=" container max-w-3xl ml-auto mr-auto text-[#d8d5d5] ">
         <Form createPost={createItem}/>
         <select 
         onChange={(e) => {
