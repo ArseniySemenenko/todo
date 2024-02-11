@@ -73,7 +73,7 @@ function App() {
     }
 
   return (
-    <div className=" container max-w-3xl ml-auto mr-auto text-[#d8d5d5] ">
+    <div className=" container max-w-3xl ml-auto mr-auto ">
         <Form createPost={createItem}/>
         <select 
         onChange={(e) => {
