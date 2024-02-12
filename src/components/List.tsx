@@ -10,16 +10,28 @@ interface IProps{
 }
 
 function List( {posts , title , del , red} : IProps) {
-    return (
-        <div className="">
-            <h1 className="mt-10 text-3xl text-center font-bold">{title}</h1>
-            <div className="mt-10">
-                {
-                    posts.map((post , index) => <Item red={red} del={del} post={post} number={index+1}/> )
-                }
+    if(posts.length === 0){
+        return(
+            <div className="">
+                <h1 className="mt-10 text-3xl text-center font-bold">{title}</h1>
+                <div className="mt-10">
+                    <h1 className="mt-10 text-3xl text-center font-bold">No Posts Found</h1>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+    else{
+        return (
+            <div className="">
+                <h1 className="mt-10 text-3xl text-center font-bold">{title}</h1>
+                <div className="mt-10">
+                    {
+                        posts.map((post , index) => <Item red={red} del={del} post={post} number={index+1}/> )
+                    }
+                </div>
+            </div>
+        );
+    }
 }
 
 export default List;
