@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import Input from '../UI/Input/Input';
+import Submit from '../UI/Submit/Submit';
+import "./Form.css";
 
 interface IProps{
     createPost: (title:string , body:string , e:any) => void,
@@ -11,10 +14,10 @@ function Form({createPost} : IProps) {
     const [body , setBody] = useState("");
 
     return (
-        <form className="flex justify-between mt-5">
+        <form className="form">
             <div>
-                <input
-                    className="border border-gray-400 rounded mr-1"
+                <Input
+                    //className="border border-gray-400 rounded mr-1"
                     type="text"
                     placeholder="title"
                     value={title}
@@ -23,8 +26,8 @@ function Form({createPost} : IProps) {
                     }}
                 />
 
-                <input
-                    className="border border-gray-400 rounded mr-1"
+                <Input
+                    //className="border border-gray-400 rounded mr-1"
                     type="text"
                     placeholder="body"
                     value={body}
@@ -34,10 +37,10 @@ function Form({createPost} : IProps) {
                 />
             </div>
             <div>
-                <input
-                    className="border border-gray-400 rounded mr-1"
+                <Submit
+                    //className="border border-gray-400 rounded mr-1"
                     type="submit"
-                    value="create"
+                    value="Create"
                     onClick={(e) => {
                         createPost(title , body , e);
                         setTitle("");

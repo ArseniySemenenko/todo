@@ -1,0 +1,11 @@
+input{
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    border:none;
+    font-family: "Roboto", sans-serif;
+}
+
+input:focus{
+    outline: none;
+    border:none;
+}

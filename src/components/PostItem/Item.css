@@ -1,0 +1,38 @@
+.post-item{
+    font-size: 1.5em;
+    padding: 20px;
+    background-color: #272727; 
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 20vh;
+}
+
+.post-functions{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.post-buttons{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+Button{
+    margin: 5px;
+}
+
+.redact Input ,.redact Submit{
+    margin: 5px;
+}
+
+.redact-inputs{
+    display: flex;
+    flex-direction: column;
+}

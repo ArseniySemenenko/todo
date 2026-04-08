@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
+import List from "./components/PostList/List";
+import Form from "./components/PostForm/Form";
+import Filter from './components/PostFilter/Filter';
+import "./App.css";
 import {IPost} from "./models";
-import List from "./components/List";
-import Form from "./components/Form";
-import Filter from './components/Filter';
 
 function App() {
     //all posts
     const [posts , setPosts] = useState<IPost[]>([
-        {id: 0 , title:'JavaScript' , body:"Programming language"}
+        {id: 0 , title:'JavaScript' , body:"Programming language"},
     ]);
     //visible posts
     const [render , setRender] =  useState<IPost[]>(posts);
@@ -73,8 +74,9 @@ function App() {
     }
 
   return (
-    <div className=" container max-w-3xl ml-auto mr-auto ">
-        <Form createPost={createItem}/>
+    <div className="container">
+        <div className="app">
+                    <Form createPost={createItem}/>
         <select 
         onChange={(e) => {
             sortByTag(e.target.value);
@@ -86,6 +88,7 @@ function App() {
         </select>
         <Filter filter={filter}/>
         <List red={redactPost} del={deleteItem} posts={render} title={"To Do"}/>
+        </div>
     </div>
   );
 }

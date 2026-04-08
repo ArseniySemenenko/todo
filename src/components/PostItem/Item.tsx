@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
-import {IPost} from "../models";
+import {IPost} from "../../models";
+import Button from '../UI/Button/Button';
+import Input from '../UI/Input/Input';
+import Submit from '../UI/Submit/Submit';
+import "./Item.css";
 
 interface IProps{
     post: IPost,
@@ -16,7 +20,7 @@ function Item({post , number , del , red} : IProps) {
     const [body , setBody] = useState(post.body);
 
     return (
-        <div className="flex justify-between items-center mt-5 p-10 border text-xl rounded-[20px] border-gray-400">
+        <div className="post-item">
             <div>
                 <strong>{number}. {post.title}</strong>
                 <p>{post.body}</p>
@@ -24,14 +28,14 @@ function Item({post , number , del , red} : IProps) {
 
             {
                 redact &&
-                <div>
+                <div className='redact'>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     red(post , title, body);
                     setRedact(!redact);
                 }}>
-                    <input 
-                        className="border border-gray-400 rounded w-[200px]"
+                    <div className='redact-inputs'>
+                        <Input 
                         placeholder='title'
                         type="text"
                         value={title}
@@ -39,8 +43,7 @@ function Item({post , number , del , red} : IProps) {
                             setTitle(e.target.value);
                         }} 
                     />
-                    <input 
-                        className="border border-gray-400 rounded w-[200px]"
+                    <Input 
                         placeholder='body'
                         type="text"
                         value={body}
@@ -48,31 +51,33 @@ function Item({post , number , del , red} : IProps) {
                             setBody(e.target.value);
                         }} 
                     />
-                    <input type="submit" />
+                    </div>
+                    <Submit type="submit" value={"Save"} onClick={()=>{}}/>
                 </form>
             </div>
             }
 
-            <div className="flex flex-row">
+            <div className="post-functions">
                 <input
                     type="checkbox"
-                    className="mr-5"
                     checked={done}
                     onChange={() => {
                         setDone(!done);
                     }}
                 />
-                <div className="flex flex-col">
-                <button
+                <div className="post-buttons">
+                <Button 
                     onClick={() => {
                         del(post.id);
                     }}
-                >Delete</button>
-                <button
+                    text={"Delete"}
+                />
+                <Button 
                     onClick={() => {
                         setRedact(!redact);
                     }}
-                >Redact</button>
+                    text={"Redact"}
+                />
                 </div>
             </div>
         </div>

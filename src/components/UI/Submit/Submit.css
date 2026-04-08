@@ -1,0 +1,14 @@
+.submit{
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(26, 26, 216);
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: rgb(16, 16, 154);
+
+}

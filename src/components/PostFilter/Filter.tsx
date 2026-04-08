@@ -1,4 +1,7 @@
 import React from 'react';
+import Input from '../UI/Input/Input';
+import './Filter.css';
+
 
 interface IProps{
     filter: (sub: String) => void,
@@ -7,7 +10,7 @@ interface IProps{
 export default function Filter({filter}: IProps) {
   return (
     <div 
-        className='Filter'
+        className='filter'
     >
         <form
             className=''
@@ -15,10 +18,9 @@ export default function Filter({filter}: IProps) {
                 e.preventDefault();
             }}
         >
-            <input 
-                className="border border-gray-400 rounded mr-1"
+            <Input
                 type="text" 
-                placeholder='Seacrh'
+                placeholder='Search'
                 onChange={(e) => {
                     filter(e.target.value);
                 }}
