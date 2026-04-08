@@ -1,4 +1,4 @@
-ToDO Application
+ToDo Application
 React , TypeScript
 Deploed on GitHub Pages(Link on description)
 Old version:
